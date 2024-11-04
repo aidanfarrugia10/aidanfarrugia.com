@@ -1,0 +1,134 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+h2 {
+    color: #007bff;
+}
+
+section {
+    margin-bottom: 3rem;
+}
+
+/* Styling for client logos with hover effects */
+.client-logo img {
+    width: 150px;
+    filter: grayscale(100%);
+    transition: filter 0.6s ease-in-out, transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.client-logos:hover .client-logo img {
+    filter: grayscale(100%) blur(3px);
+    transform: scale(0.9);
+    opacity: 0.6;
+}
+
+.client-logo:hover img {
+    filter: grayscale(0) blur(0);
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* Style for the intro section */
+#intro {
+    padding: 60px 0;
+    color: #fff;
+    background-color: #2e2e2e;
+}
+
+#intro button {
+    background-color: #007bff;
+    border: none;
+}
+
+#intro .fab {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+#intro .fab:hover {
+    color: #007bff;
+}
+
+/* Form container styling */
+#contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: #f1f5f9;
+}
+
+#contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+
+form h3 {
+    text-align: center;
+    color: #3a3a3a;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control:focus {
+    border-color: #ffa726;
+    box-shadow: 0px 0px 8px rgba(255, 87, 34, 0.6);
+}
+
+/* Submit button styling */
+button[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    #contact {
+        justify-content: center;
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #intro .col-md-6 {
+        text-align: center;
+    }
+
+    #intro img {
+        width: 60%;
+    }
+
+    form {
+        width: 90%;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    }
+}
