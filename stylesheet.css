@@ -1,4 +1,5 @@
 /* General styling */
+
 body {
     font-family: Arial, sans-serif;
     color: #333;
@@ -108,6 +109,152 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #0056b3;
+}
+
+/* General Section Styling */
+#career {
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+#career h2 {
+    color: #3a3a3a;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Styling for each career step */
+#career .career-logo img {
+    border: 3px solid #007bff;
+    padding: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 50%;
+    width: 50px;
+    height: 80px;
+}
+
+#career .col-md-4 {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInUp 0.8s ease-out;
+    overflow: hidden;
+    flex: 1 1 30%;
+    max-width: 25%;
+}
+
+#career .col-md-4:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+#career h5 {
+    font-size: 1.2rem;
+    color: #ff4500;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+#career p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Bullet Points Styling */
+#career ul {
+    padding-left: 1rem;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+#career ul li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+    animation: fadeInUp 1s ease;
+}
+
+#career ul li::before {
+    content: "\2022";
+    color: #ff4500;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Connector Line Styling */
+#career .col-md-1 .career-line {
+    width: 10px;
+    background: linear-gradient(to bottom, #007bff, #ff4500);
+    height: 100%;
+    animation: expandLine 1.5s ease-out;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 992px) {
+    #career h2 {
+        font-size: 2rem;
+    }
+    
+    #career .col-md-4 {
+        flex: 1 1 45%;
+        max-width: 45%;
+        margin-left: 0rem;
+    }
+
+    #career .col-md-1 .career-line {
+        display: none;
+    }
+
+    #career ul {
+        font-size: 0.85rem;
+    }
+    
+    #career .career-logo img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    #career .col-md-4 {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #career h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes expandLine {
+    from { height: 0; }
+    to { height: 100%; }
 }
 
 /* Responsive adjustments */
