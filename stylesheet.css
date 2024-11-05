@@ -117,6 +117,14 @@ button[type="submit"]:hover {
     padding: 10px 20px;
     overflow: hidden;
 }
+/* Shadow Effect for Career Advancement Items */
+.career-item {
+    transition: box-shadow 0.4s ease; /* Transition for shadow effect */
+}
+
+.career-item.visible {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow when visible */
+}
 
 #career h2 {
     color: #3a3a3a;
@@ -214,6 +222,38 @@ button[type="submit"]:hover {
     background: linear-gradient(to bottom, #007bff, #ff4500);
     height: 100%;
     animation: expandLine 1.5s ease-out;
+}
+
+/* Skills Section Styling */
+#skills {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+    border-radius: 8px;
+}
+
+/* Skill Item Styling */
+.skill-item {
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start from below */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition for animation */
+}
+
+.skill-item.visible {
+    opacity: 1; /* Make visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+.skill-logo {
+    width: 100px;
+    border-radius: 20%;
+    margin-bottom: 1rem; /* Space below image */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .skill-logo {
+        width: 80px; /* Smaller logo size on mobile */
+    }
 }
 
 /* Responsive Design for Mobile */

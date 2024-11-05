@@ -43,3 +43,27 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("resize", checkVisibility);
     checkVisibility(); // Initial check on page load
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const skillItems = document.querySelectorAll("#skills .skill-item");
+
+    function checkVisibility() {
+        const triggerBottom = window.innerHeight * 0.8; // Trigger when 80% of the viewport height is reached
+
+        skillItems.forEach(item => {
+            const boxTop = item.getBoundingClientRect().top;
+
+            if (boxTop < triggerBottom) {
+                item.classList.add("visible");
+            } else {
+                item.classList.remove("visible");
+            }
+        });
+    }
+
+    // Check visibility on scroll and resize
+    window.addEventListener("scroll", checkVisibility);
+    window.addEventListener("resize", checkVisibility);
+    checkVisibility(); // Initial check on page load
+});
