@@ -19,3 +19,27 @@ document.querySelectorAll('.client-logo').forEach(logo => {
         });
     });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const careerItems = document.querySelectorAll("#career .col-md-4");
+
+    function checkVisibility() {
+        const triggerBottom = window.innerHeight * 0.8; // Adjust based on how soon you want the effect to trigger
+
+        careerItems.forEach(item => {
+            const boxTop = item.getBoundingClientRect().top;
+
+            if (boxTop < triggerBottom) {
+                item.classList.add("visible");
+            } else {
+                item.classList.remove("visible");
+            }
+        });
+    }
+
+    // Check visibility on scroll and resize
+    window.addEventListener("scroll", checkVisibility);
+    window.addEventListener("resize", checkVisibility);
+    checkVisibility(); // Initial check on page load
+});

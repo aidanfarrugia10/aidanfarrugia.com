@@ -154,6 +154,19 @@ button[type="submit"]:hover {
     max-width: 25%;
 }
 
+/* Initial hidden state for career steps */
+#career .col-md-4 {
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Move slightly down */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Transition effect */
+}
+
+/* Animated visible state */
+#career .col-md-4.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move back to original position */
+}
+
 #career .col-md-4:hover {
     transform: translateY(-10px);
     box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.2);
@@ -225,7 +238,7 @@ button[type="submit"]:hover {
     
     #career .career-logo img {
         width: 50px;
-        height: 50px;
+        height: 80px;
     }
 }
 
@@ -238,6 +251,10 @@ button[type="submit"]:hover {
 
     #career h2 {
         font-size: 1.8rem;
+    }
+    #career .career-logo img {
+        width: 50px;
+        height: 80px;
     }
 }
 
