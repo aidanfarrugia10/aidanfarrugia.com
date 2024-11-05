@@ -249,10 +249,20 @@ button[type="submit"]:hover {
     margin-bottom: 1rem; /* Space below image */
 }
 
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    font-size: 0.9em;
+  }
+  footer p {
+    margin: 0;
+  }
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .skill-logo {
-        width: 80px; /* Smaller logo size on mobile */
+        width: 70px; /* Smaller logo size on mobile */
     }
 }
 
