@@ -1,6 +1,15 @@
-/* General styling */
+/* General Styling and Overflow Fixes */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-body {
+html, body {
+    width: 100%;
+    overflow-x: hidden;
     font-family: Arial, sans-serif;
     color: #333;
 }
@@ -13,26 +22,7 @@ section {
     margin-bottom: 3rem;
 }
 
-/* Styling for client logos with hover effects */
-.client-logo img {
-    width: 150px;
-    filter: grayscale(100%);
-    transition: filter 0.6s ease-in-out, transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
-}
-
-.client-logos:hover .client-logo img {
-    filter: grayscale(100%) blur(3px);
-    transform: scale(0.9);
-    opacity: 0.6;
-}
-
-.client-logo:hover img {
-    filter: grayscale(0) blur(0);
-    transform: scale(1.2);
-    opacity: 1;
-}
-
-/* Style for the intro section */
+/* Intro Section Styling */
 #intro {
     padding: 60px 0;
     color: #fff;
@@ -53,7 +43,28 @@ section {
     color: #007bff;
 }
 
-/* Form container styling */
+
+
+/* Client Logo Styling */
+.client-logo img {
+    width: 150px;
+    filter: grayscale(100%);
+    transition: filter 0.6s ease-in-out, transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+.client-logos:hover .client-logo img {
+    filter: grayscale(100%) blur(3px);
+    transform: scale(0.9);
+    opacity: 0.6;
+}
+
+.client-logo:hover img {
+    filter: grayscale(0) blur(0);
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+/* Contact Form Styling */
 #contact {
     display: flex;
     justify-content: center;
@@ -70,7 +81,6 @@ section {
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     background-color: #f9f9f9;
 }
-
 
 form h3 {
     text-align: center;
@@ -95,7 +105,7 @@ form h3 {
     box-shadow: 0px 0px 8px rgba(255, 87, 34, 0.6);
 }
 
-/* Submit button styling */
+/* Submit Button Styling */
 button[type="submit"] {
     background-color: #007bff;
     border: none;
@@ -111,19 +121,11 @@ button[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* General Section Styling */
+/* Career Section Styling */
 #career {
     background-color: #f9f9f9;
     padding: 10px 20px;
     overflow: hidden;
-}
-/* Shadow Effect for Career Advancement Items */
-.career-item {
-    transition: box-shadow 0.4s ease; /* Transition for shadow effect */
-}
-
-.career-item.visible {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Shadow when visible */
 }
 
 #career h2 {
@@ -137,7 +139,6 @@ button[type="submit"]:hover {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* Styling for each career step */
 #career .career-logo img {
     border: 3px solid #007bff;
     padding: 5px;
@@ -160,19 +161,14 @@ button[type="submit"]:hover {
     overflow: hidden;
     flex: 1 1 30%;
     max-width: 25%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-/* Initial hidden state for career steps */
-#career .col-md-4 {
-    opacity: 0; /* Start invisible */
-    transform: translateY(20px); /* Move slightly down */
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Transition effect */
-}
-
-/* Animated visible state */
 #career .col-md-4.visible {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Move back to original position */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #career .col-md-4:hover {
@@ -192,7 +188,6 @@ button[type="submit"]:hover {
     color: #666;
 }
 
-/* Bullet Points Styling */
 #career ul {
     padding-left: 1rem;
     font-size: 0.85rem;
@@ -216,7 +211,6 @@ button[type="submit"]:hover {
     line-height: 1;
 }
 
-/* Connector Line Styling */
 #career .col-md-1 .career-line {
     width: 10px;
     background: linear-gradient(to bottom, #007bff, #ff4500);
@@ -231,81 +225,34 @@ button[type="submit"]:hover {
     border-radius: 8px;
 }
 
-/* Skill Item Styling */
 .skill-item {
-    opacity: 0; /* Start hidden */
-    transform: translateY(20px); /* Start from below */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition for animation */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .skill-item.visible {
-    opacity: 1; /* Make visible */
-    transform: translateY(0); /* Move to original position */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .skill-logo {
     width: 100px;
     border-radius: 20%;
-    margin-bottom: 1rem; /* Space below image */
+    margin-bottom: 1rem;
 }
 
+/* Footer Styling */
 footer {
     background-color: #333;
     color: #fff;
     padding: 15px;
     font-size: 0.9em;
-  }
-  footer p {
+    text-align: center;
+}
+
+footer p {
     margin: 0;
-  }
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .skill-logo {
-        width: 70px; /* Smaller logo size on mobile */
-    }
-}
-
-/* Responsive Design for Mobile */
-@media (max-width: 992px) {
-    #career h2 {
-        font-size: 2rem;
-    }
-    
-    #career .col-md-4 {
-        flex: 1 1 45%;
-        max-width: 45%;
-        margin-left: 0rem;
-    }
-
-    #career .col-md-1 .career-line {
-        display: none;
-    }
-
-    #career ul {
-        font-size: 0.85rem;
-    }
-    
-    #career .career-logo img {
-        width: 50px;
-        height: 80px;
-    }
-}
-
-@media (max-width: 768px) {
-    #career .col-md-4 {
-        flex: 1 1 100%;
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    #career h2 {
-        font-size: 1.8rem;
-    }
-    #career .career-logo img {
-        width: 50px;
-        height: 80px;
-    }
 }
 
 /* Animations */
@@ -324,25 +271,61 @@ footer {
     to { height: 100%; }
 }
 
-/* Responsive adjustments */
-@media (min-width: 768px) {
-    #contact {
-        justify-content: center;
-        padding: 3rem;
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    #career h2 {
+        font-size: 2rem;
+    }
+    #career .col-md-4 {
+        flex: 1 1 45%;
+        max-width: 45%;
+        margin-left: 0;
+    }
+    #career .col-md-1 .career-line {
+        display: none;
+    }
+    #career ul {
+        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 768px) {
+    #career .col-md-4 {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    #career h2 {
+        font-size: 1.8rem;
+    }
+    #career .career-logo img{
+        width: 50px;
+        height: 80px;
+    }
+
+    #career 
+    .skill-logo {
+        width: 50px;
+        height: 50px;
+    }
+    #contact form {
+        width: 90%;
+        padding: 1.5rem;
+        margin: 0 auto;
+    }
     #intro .col-md-6 {
         text-align: center;
     }
-
     #intro img {
-        width: 60%;
+        width: 100%;
     }
 
-    form {
-        width: 90%;
-        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    .d-flex.align-items-center {
+        text-align: center;
+        flex-direction: column;
     }
+
+   
+
+    
 }
