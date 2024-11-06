@@ -11,8 +11,7 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
+   
 </head>
 <body>
     <!-- Navbar -->
@@ -25,13 +24,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a> <!-- Adjust this if your homepage is named differently -->
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a> <!-- Link to your projects page -->
+                        <a class="nav-link" href="projects.html">Projects</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a> <!-- Link to this new contact page -->
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -40,16 +39,16 @@
 
     <!-- Contact Section -->
     <section id="contact" class="container py-5">
-        <form style="max-width: 500px; margin: 0 auto; padding: 2rem; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
+        <form action="https://formspree.io/f/xyzywewk" method="POST" style="max-width: 500px; margin: 0 auto; padding: 2rem; border-radius: 8px; box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); background-color: #f9f9f9;">
             <h3 style="text-align: center; color: #3a3a3a; margin-bottom: 1rem; font-size: 1.5rem; font-weight: bold;">Contact Me</h3>
             <div class="form-group mb-3">
-                <input type="text" class="form-control" placeholder="Your Name" required>
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
             </div>
             <div class="form-group mb-3">
-                <input type="email" class="form-control" placeholder="Your Email" required>
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
             </div>
             <div class="form-group mb-3">
-                <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                <textarea name="message" class="form-control" rows="4" placeholder="Your Message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
         </form>

@@ -48,7 +48,7 @@ section {
 /* Client Logo Styling */
 .client-logo img {
     width: 150px;
-    filter: grayscale(100%);
+    filter: grayscale(0); /* Colored on load */
     transition: filter 0.6s ease-in-out, transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
 
@@ -309,6 +309,27 @@ footer p {
         margin-right: 5px;
     }
 
+    .client-logos:hover .client-logo img {
+        filter: grayscale(100%) blur(3px);
+        transform: scale(0.9);
+        opacity: 0.6;
+    }
+
+    .client-logo:hover img {
+        filter: grayscale(0) blur(0);
+        transform: scale(1.2);
+        opacity: 1;
+    }
+
+    .client-logo img {
+        width: 70px; /* Smaller size for mobile */
+        transform: scale(0.7);
+    }
+
+    #DJIZAK{
+        margin-left: -1.5rem;
+    }
+
    
 }
 
@@ -363,7 +384,14 @@ footer p {
         margin-right: 5px;
     }
 
-   
+    .client-logo img {
+        width: 80px; /* Smaller size for mobile */
+        transform: scale(1);
+    }
+
+    #DJIZAK{
+        margin-left: -1.5rem;
+    }
 
     
 }

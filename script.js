@@ -67,3 +67,56 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("resize", checkVisibility);
     checkVisibility(); // Initial check on page load
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const isMobile = window.innerWidth <= 767;
+    const logos = document.querySelectorAll('.client-logo img');
+
+    if (isMobile) {
+        // Mobile Scroll Effect using IntersectionObserver
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.6 // Trigger when 60% of the logo is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transform = 'scale(1.2)';
+                    entry.target.style.filter = 'grayscale(0) blur(0)';
+                    entry.target.style.opacity = '1';
+                } else {
+                    entry.target.style.transform = 'scale(1)';
+                    entry.target.style.filter = 'grayscale(100%) blur(3px)';
+                    entry.target.style.opacity = '0.6';
+                }
+            });
+        }, observerOptions);
+
+        // Observe each logo
+        logos.forEach(logo => observer.observe(logo));
+    } else {
+        // Desktop Hover Effect
+        logos.forEach(logo => {
+            logo.addEventListener('mouseenter', () => {
+                logos.forEach(img => {
+                    img.style.filter = 'grayscale(100%) blur(3px)';
+                    img.style.transform = 'scale(0.9)';
+                    img.style.opacity = '0.6';
+                });
+                logo.style.filter = 'grayscale(0) blur(0)';
+                logo.style.transform = 'scale(1.2)';
+                logo.style.opacity = '1';
+            });
+
+            logo.addEventListener('mouseleave', () => {
+                logos.forEach(img => {
+                    img.style.filter = 'grayscale(0) blur(0)';
+                    img.style.transform = 'scale(1)';
+                    img.style.opacity = '1';
+                });
+            });
+        });
+    }
+});
