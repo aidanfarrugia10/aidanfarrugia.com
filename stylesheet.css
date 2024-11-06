@@ -47,14 +47,14 @@ section {
 
 /* Client Logo Styling */
 .client-logo img {
-    width: 150px;
+    width: 30px;
     filter: grayscale(0); /* Colored on load */
     transition: filter 0.6s ease-in-out, transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
 }
 
 .client-logos:hover .client-logo img {
     filter: grayscale(100%) blur(3px);
-    transform: scale(0.9);
+    transform: scale(0.3);
     opacity: 0.6;
 }
 
@@ -276,7 +276,6 @@ footer p {
     from { height: 0; }
     to { height: 100%; }
 }
-
 /* Responsive Adjustments */
 @media (max-width: 992px) {
     #career h2 {
@@ -309,28 +308,20 @@ footer p {
         margin-right: 5px;
     }
 
-    .client-logos:hover .client-logo img {
-        filter: grayscale(100%) blur(3px);
-        transform: scale(0.9);
-        opacity: 0.6;
-    }
-
-    .client-logo:hover img {
-        filter: grayscale(0) blur(0);
-        transform: scale(1.2);
-        opacity: 1;
-    }
-
+    /* Client Logo Styling for Tablet */
     .client-logo img {
-        width: 70px; /* Smaller size for mobile */
-        transform: scale(0.7);
+        width: 80px; /* Further reduced size for tablet */
+        transform: scale(0.45); /* Slightly smaller normal state */
     }
 
-    #DJIZAK{
+    #DJIZAK {
         margin-left: -1.5rem;
+        margin-top: 1rem;
     }
 
-   
+    #avelon {
+        margin-top: -3rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -342,21 +333,22 @@ footer p {
     #career h2 {
         font-size: 1.8rem;
     }
-    #career .career-logo img{
-        width: 50px;
-        height: 80px;
+    #career .career-logo img {
+        width: 45px; /* Further reduced size for smaller screens */
+        height: 70px;
     }
 
-    #career 
     .skill-logo {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
+
     #contact form {
         width: 90%;
         padding: 1.5rem;
         margin: 0 auto;
     }
+
     #intro .col-md-6 {
         text-align: center;
     }
@@ -372,7 +364,7 @@ footer p {
     .download-btn {
         margin-bottom: 10px;
     }
-    
+
     .social-icons-container {
         justify-content: center;
         width: 100%;
@@ -384,14 +376,20 @@ footer p {
         margin-right: 5px;
     }
 
+    /* Client Logo Styling for Mobile */
     .client-logo img {
-        width: 80px; /* Smaller size for mobile */
-        transform: scale(1);
+        width: 80px; /* Further reduced size for mobile */
+        transform: scale(0.85); /* Slightly smaller normal state */
+        filter: grayscale(100%); /* Apply grayscale initially */
+        transition: transform 0.4s ease-in-out, filter 0.4s ease-in-out, opacity 0.4s ease-in-out; /* Faster transition */
     }
 
-    #DJIZAK{
+    #DJIZAK {
         margin-left: -1.5rem;
+        margin-top: 1rem;
     }
 
-    
+    #avelon {
+        margin-top: -3rem;
+    }
 }
