@@ -1,0 +1,21 @@
+@import './base.css';
+
+* {
+  font-family: 'Figtree', sans-serif;
+}
+
+#app {
+  padding: 0 !important; /* Ensures padding is removed */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+
+
+
+
